@@ -1,0 +1,64 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit(form.value, form.valid)" class="reg-form">
+  <h2>Student Registration</h2>
+
+  <div class="control-row">
+    <div class="control no-margin">
+      <label for="name">Name</label>
+      <input id="name" type="text" formControlName="name" />
+      @if(formControls['name'].invalid && formControls['name'].dirty){
+        <span>Name is required</span>
+      }
+    </div>
+
+    <div class="control no-margin">
+      <label for="address">Address</label>
+      <input id="address" type="text" formControlName="address" />
+      @if(formControls['address'].invalid && formControls['address'].dirty){
+        <span>Address is required</span>
+      }
+    </div>
+  </div>
+
+  <div class="control-row">
+    <div class="control no-margin">
+      <label for="dob">Date of Birth</label>
+      <input id="dob" type="date" formControlName="dob" />
+      @if(formControls['dob'].invalid && formControls['dob'].dirty){
+        <span>Date of birth is required</span>
+      }
+    </div>
+
+    <div class="control no-margin">
+      <label for="phone">Phone Number</label>
+      <input id="phone" type="tel" formControlName="phone" [maxlength]="11" />
+      @if(formControls['phone'].invalid && formControls['phone'].dirty){
+        <span>Phone number must be 11 digits</span>
+      }
+    </div>
+  </div>
+
+  <div class="control-row">
+    <div class="control no-margin">
+      <label for="gender">Gender</label>
+      <select id="gender" formControlName="gender">
+        <option value="">Select</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+      @if(formControls['gender'].invalid && formControls['gender'].dirty){
+        <span>Gender is required</span>
+      }
+    </div>
+
+    <div class="control no-margin">
+      <label for="email">Email</label>
+      <input id="email" type="email" formControlName="email" />
+      @if(formControls['email'].invalid && formControls['email'].dirty){
+        <span>Please enter a valid email</span>
+      }
+    </div>
+  </div>
+
+  <button type="submit" class="button" [disabled]="form.invalid">Register</button>
+</form>
