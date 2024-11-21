@@ -1,4 +1,4 @@
-# StudentReg
+# Student Registration Form (Reactive Form) with Validation in Angular
 ![f-1](https://github.com/user-attachments/assets/e5adf879-8449-40cc-98cc-3201a0029e64)
 ![f-2](https://github.com/user-attachments/assets/546db0ff-5085-4744-8d54-dd9a70ade0f0)
 
